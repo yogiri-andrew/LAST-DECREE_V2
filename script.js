@@ -1,4 +1,4 @@
-// LAST DECREE - CLASSIFIED SYSTEM
+(rr// LAST DECREE - CLASSIFIED SYSTEM
 // Core Interface Script
 
 document.addEventListener("DOMContentLoaded", () => {
