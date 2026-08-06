@@ -209,3 +209,6 @@ transition.classList.remove("active");
 
 
 });
+document.getElementById("ton-bouton").addEventListener("click", () => {
+  // ce que le bouton doit faire ici
+});
