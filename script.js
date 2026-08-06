@@ -80,36 +80,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-    // Système de connexion
-    const login = document.querySelector("#loginBtn");
-    const password = document.querySelector("#password");
-    const result = document.querySelector("#result");
+    login.addEventListener("click",()=>{
+
+if(password.value==="DECREE"){
+
+result.innerHTML="ACCESS GRANTED // WELCOME AGENT";
+
+result.style.color="#00ff99";
 
 
-    if(login){
+document.querySelector(".security-screen")
+.style.display="none";
 
-        login.addEventListener("click",()=>{
 
-            if(password.value === "DECREE"){
+}else{
 
-                result.innerHTML =
-                "ACCESS GRANTED // BIENVENUE AGENT";
+result.innerHTML="ACCESS DENIED // INVALID CODE";
 
-                result.style.color="#00ff99";
+result.style.color="red";
 
-            }else{
+}
 
-                result.innerHTML =
-                "ACCESS DENIED // CODE INVALIDE";
-
-                result.style.color="red";
-
-            }
-
-        });
-
-    }
-
+});
 
 
     // Horloge système
