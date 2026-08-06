@@ -1,0 +1,487 @@
+/* ===================================
+   LAST DECREE
+   CLASSIFIED SYSTEM UI V2
+   =================================== */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body{
+
+    background:
+    radial-gradient(circle at center,#300000 0%,#080000 45%,#000 100%);
+
+    color:#ff2020;
+
+    font-family:'Share Tech Mono', monospace;
+
+    min-height:100vh;
+
+    overflow:hidden;
+
+}
+
+
+
+/* SCANLINES */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    repeating-linear-gradient(
+        0deg,
+        rgba(255,0,0,0.05) 0px,
+        rgba(255,0,0,0.05) 1px,
+        transparent 2px,
+        transparent 4px
+    );
+
+    pointer-events:none;
+
+    z-index:99;
+
+}
+
+
+
+/* VIGNETTE */
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    radial-gradient(
+        transparent 40%,
+        black 100%
+    );
+
+    pointer-events:none;
+
+}
+
+
+
+/* LOADER */
+
+.loader{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#000;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    z-index:100;
+
+
+    animation:pulse 2s infinite;
+
+}
+
+
+
+.loader h1{
+
+    font-size:40px;
+
+    letter-spacing:10px;
+
+    text-shadow:
+    0 0 10px red,
+    0 0 30px red;
+
+}
+
+
+
+.loader.hide{
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:1s;
+
+}
+
+
+
+@keyframes pulse{
+
+    50%{
+        opacity:.7;
+    }
+
+}
+
+
+
+/* MAIN */
+
+.main{
+
+    opacity:0;
+
+    transform:translateY(30px);
+
+    transition:1s;
+
+}
+
+
+
+.main.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+
+
+/* HUD */
+
+.hud{
+
+    border:2px solid #900;
+
+    margin:40px;
+
+    padding:30px;
+
+    background:
+    rgba(0,0,0,.75);
+
+    box-shadow:
+
+    0 0 20px red,
+
+    inset 0 0 30px #300;
+
+
+    position:relative;
+
+}
+
+
+
+/* Coins HUD */
+
+.hud::before,
+.hud::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:40px;
+    height:40px;
+
+    border-color:red;
+
+}
+
+
+
+.hud::before{
+
+    top:-2px;
+    left:-2px;
+
+    border-left:3px solid red;
+    border-top:3px solid red;
+
+}
+
+
+
+.hud::after{
+
+    bottom:-2px;
+    right:-2px;
+
+    border-right:3px solid red;
+    border-bottom:3px solid red;
+
+}
+
+
+
+/* GLITCH */
+
+.glitch{
+
+    position:relative;
+
+    animation:glitch 2s infinite;
+
+}
+
+
+
+@keyframes glitch{
+
+
+0%{
+
+text-shadow:
+2px 0 red,
+-2px 0 black;
+
+}
+
+
+20%{
+
+text-shadow:
+-3px 0 red,
+3px 0 white;
+
+}
+
+
+40%{
+
+text-shadow:none;
+
+}
+
+
+100%{
+
+text-shadow:
+2px 0 red;
+
+}
+
+
+}
+
+
+
+/* TERMINAL */
+
+.terminal{
+
+    background:#020202;
+
+    border:
+
+    1px solid red;
+
+
+    padding:20px;
+
+
+    margin-top:20px;
+
+
+    height:250px;
+
+
+    overflow:hidden;
+
+
+    box-shadow:
+
+    inset 0 0 20px red;
+
+}
+
+
+
+.terminal p{
+
+    margin:10px 0;
+
+    animation:type .5s;
+
+}
+
+
+
+@keyframes type{
+
+from{
+
+opacity:0;
+
+transform:translateX(-20px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateX(0);
+
+}
+
+}
+
+
+
+/* LOGIN */
+
+.login-box{
+
+    margin-top:30px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+
+
+input{
+
+    background:#000;
+
+    border:
+
+    1px solid red;
+
+
+    padding:15px;
+
+    color:red;
+
+    outline:none;
+
+}
+
+
+
+input:focus{
+
+    box-shadow:
+
+    0 0 15px red;
+
+}
+
+
+
+button{
+
+    background:#400;
+
+    color:white;
+
+    border:1px solid red;
+
+    padding:15px;
+
+    cursor:pointer;
+
+    font-family:inherit;
+
+    transition:.3s;
+
+
+}
+
+
+
+button:hover{
+
+    background:red;
+
+    color:black;
+
+    box-shadow:
+
+    0 0 30px red;
+
+    transform:scale(1.05);
+
+}
+
+
+
+/* ACCESS RESULT */
+
+#result{
+
+    margin-top:20px;
+
+    font-size:20px;
+
+    text-align:center;
+
+}
+
+
+
+/* SYSTEM CLOCK */
+
+.clock{
+
+    position:absolute;
+
+    top:20px;
+
+    right:30px;
+
+    font-size:20px;
+
+    color:#ff5555;
+
+}
+
+
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+.hud{
+
+margin:15px;
+
+padding:20px;
+
+}
+
+
+.loader h1{
+
+font-size:25px;
+
+}
+
+
+}
