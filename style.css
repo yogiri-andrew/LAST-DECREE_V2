@@ -682,3 +682,47 @@ filter:brightness(1.8);
 }
 
 }
+.command-panel{
+
+margin:40px;
+
+padding:25px;
+
+border:1px solid red;
+
+background:rgba(0,0,0,.7);
+
+box-shadow:
+
+0 0 25px red,
+
+inset 0 0 15px #300;
+
+animation:pulsePanel 3s infinite;
+
+}
+
+
+.command-panel h2{
+
+letter-spacing:5px;
+
+margin-bottom:20px;
+
+}
+
+
+
+@keyframes pulsePanel{
+
+50%{
+
+box-shadow:
+
+0 0 40px red,
+
+inset 0 0 25px #500;
+
+}
+
+}
