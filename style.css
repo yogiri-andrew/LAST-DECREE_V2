@@ -485,3 +485,200 @@ font-size:25px;
 
 
 }
+/* ===============================
+   LAST DECREE LOGIN SYSTEM
+   =============================== */
+
+
+.security-screen{
+
+position:fixed;
+
+inset:0;
+
+background:#000;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+z-index:50;
+
+}
+
+
+.logo-container{
+
+text-align:center;
+
+position:relative;
+
+}
+
+
+
+.logo{
+
+font-size:55px;
+
+line-height:.8;
+
+letter-spacing:12px;
+
+color:#ff0000;
+
+text-shadow:
+
+0 0 10px red,
+
+0 0 40px red;
+
+animation:logoPulse 2s infinite;
+
+}
+
+
+
+.logo-ring{
+
+position:absolute;
+
+width:230px;
+
+height:230px;
+
+border:2px solid red;
+
+border-radius:50%;
+
+left:50%;
+
+top:50%;
+
+transform:translate(-50%,-50%);
+
+animation:rotateRing 5s linear infinite;
+
+box-shadow:
+
+0 0 30px red;
+
+}
+
+
+
+.logo-ring::after{
+
+content:"";
+
+position:absolute;
+
+inset:15px;
+
+border:1px dashed red;
+
+border-radius:50%;
+
+}
+
+
+
+.classified{
+
+margin-top:30px;
+
+letter-spacing:5px;
+
+color:#888;
+
+}
+
+
+
+.login-panel{
+
+margin-top:50px;
+
+width:350px;
+
+padding:30px;
+
+background:
+
+rgba(20,0,0,.8);
+
+border:1px solid red;
+
+box-shadow:
+
+0 0 30px red,
+
+inset 0 0 20px #500;
+
+text-align:center;
+
+}
+
+
+
+.login-panel h2{
+
+font-size:18px;
+
+margin-bottom:20px;
+
+}
+
+
+
+.level{
+
+margin-bottom:20px;
+
+color:#aaa;
+
+}
+
+
+
+.level span{
+
+color:red;
+
+font-weight:bold;
+
+}
+
+
+
+@keyframes rotateRing{
+
+from{
+
+transform:translate(-50%,-50%) rotate(0deg);
+
+}
+
+to{
+
+transform:translate(-50%,-50%) rotate(360deg);
+
+}
+
+}
+
+
+
+@keyframes logoPulse{
+
+50%{
+
+filter:brightness(1.8);
+
+}
+
+}
