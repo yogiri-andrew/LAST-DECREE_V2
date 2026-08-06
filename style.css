@@ -725,4 +725,131 @@ inset 0 0 25px #500;
 
 }
 
+}/* =========================
+   ANIME SYSTEM TRANSITION
+   ========================= */
+
+
+.anime-transition{
+
+position:fixed;
+
+inset:0;
+
+background:#000;
+
+display:none;
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+z-index:200;
+
+color:red;
+
+}
+
+
+.anime-transition.active{
+
+display:flex;
+
+animation:fadeSystem 2s forwards;
+
+}
+
+
+.transition-title{
+
+font-size:60px;
+
+letter-spacing:15px;
+
+text-shadow:
+
+0 0 20px red,
+
+0 0 50px red;
+
+animation:titlePower 1s infinite;
+
+}
+
+
+
+.scan-line{
+
+position:absolute;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:5px;
+
+background:red;
+
+box-shadow:0 0 30px red;
+
+animation:scan 2s linear infinite;
+
+}
+
+
+
+@keyframes scan{
+
+from{
+
+top:0;
+
+}
+
+to{
+
+top:100%;
+
+}
+
+}
+
+
+
+@keyframes fadeSystem{
+
+0%{
+
+opacity:0;
+
+}
+
+50%{
+
+opacity:1;
+
+}
+
+100%{
+
+opacity:0;
+
+}
+
+}
+
+
+
+@keyframes titlePower{
+
+50%{
+
+transform:scale(1.05);
+
+}
+
 }
