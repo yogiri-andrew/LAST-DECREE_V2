@@ -177,7 +177,17 @@ result.style.color="red";
 
 }
 
-});
+});const transition = document.querySelector("#transition");
+
+
+transition.classList.add("active");
+
+
+setTimeout(()=>{
+
+transition.classList.remove("active");
+
+},2000);
 
 
     // Horloge système
