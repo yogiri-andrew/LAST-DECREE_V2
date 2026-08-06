@@ -2,7 +2,83 @@
 // Core Interface Script
 
 document.addEventListener("DOMContentLoaded", () => {
+// =================================
+// LAST DECREE ACCESS LEVEL SYSTEM
+// ADD-ON (NE REMPLACE PAS LE LOADER)
+// =================================
 
+const accessCodes = {
+    "DECREE": {
+        rank: "AGENT",
+        clearance: "LEVEL 1"
+    },
+
+    "COMMAND": {
+        rank: "COMMANDER",
+        clearance: "LEVEL 2"
+    },
+
+    "OMEGA": {
+        rank: "DIRECTOR",
+        clearance: "LEVEL 3"
+    }
+};
+
+
+const loginBtn = document.querySelector("#loginBtn");
+const passwordInput = document.querySelector("#password");
+const result = document.querySelector("#result");
+
+
+if(loginBtn){
+
+    loginBtn.addEventListener("click",()=>{
+
+        const code = passwordInput.value.toUpperCase();
+
+
+        if(accessCodes[code]){
+
+            const user = accessCodes[code];
+
+
+            result.innerHTML = `
+            ACCESS GRANTED<br>
+            IDENTITY : ${user.rank}<br>
+            CLEARANCE : ${user.clearance}
+            `;
+
+
+            result.style.color="#00ff99";
+
+
+            setTimeout(()=>{
+
+                document.querySelector(".security-screen")
+                .style.display="none";
+
+                document.querySelector(".main")
+                .classList.add("show");
+
+
+            },2000);
+
+
+
+        }else{
+
+
+            result.innerHTML=
+            "ACCESS DENIED // INVALID CODE";
+
+            result.style.color="red";
+
+
+        }
+
+    });
+
+}
     const loader = document.querySelector(".loader");
     const main = document.querySelector(".main");
 
